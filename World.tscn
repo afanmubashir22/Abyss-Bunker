@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://s0oq4qpswqyk"]
+
+[ext_resource type="PackedScene" uid="uid://dk7poh0xnq8ji" path="res://player.tscn" id="1_c6gwx"]
+
+[node name="World" type="Node3D" unique_id=170261281]
+
+[node name="BunkerMap" type="Node3D" parent="." unique_id=925649601]
+
+[node name="Player" parent="." unique_id=2134804852 instance=ExtResource("1_c6gwx")]
