@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dk7poh0xnq8ji" path="res://player.tscn" id="1_mhbia"]
 
 [node name="CSGBox3D" type="CSGBox3D" unique_id=1505969852]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.429932)
 use_collision = true
 size = Vector3(10, 1, 32.859863)
 

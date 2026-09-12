@@ -13,10 +13,9 @@ func _ready() -> void:
 		add_to_group("player")
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 func _unhandled_input(event: InputEvent) -> void:
-		if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+				if not get_tree().paused:
+						Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 				rotate_y(-event.relative.x * mouse_sensitivity)
 				head.rotate_x(-event.relative.y * mouse_sensitivity)
