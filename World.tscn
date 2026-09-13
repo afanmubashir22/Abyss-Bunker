@@ -6,4 +6,9 @@
 
 [node name="BunkerMap" type="Node3D" parent="." unique_id=925649601]
 
+[node name="CSGBox3D" type="CSGBox3D" parent="BunkerMap" unique_id=1598540563]
+use_collision = true
+size = Vector3(10, 1, 30)
+
 [node name="Player" parent="." unique_id=2134804852 instance=ExtResource("1_c6gwx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

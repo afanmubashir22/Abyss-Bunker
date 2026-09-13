@@ -44,6 +44,7 @@ text = "PAUSED"
 [node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=1674161712]
 custom_minimum_size = Vector2(220, 46)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.7529412, 0.83137256, 0.83137256, 1)
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_nov15")
 text = "Resume"
@@ -51,5 +52,6 @@ text = "Resume"
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=692536184]
 custom_minimum_size = Vector2(220, 46)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.7529412, 0.83137256, 0.83137256, 1)
 theme_override_font_sizes/font_size = 18
 text = "Quit"

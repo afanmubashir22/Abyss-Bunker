@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://5rek8m7ntvws"]
+
+[ext_resource type="Script" uid="uid://3ug84kyshgrf" path="res://lumen_drone.gd" id="1_opow3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k5j8d"]
+radius = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0y58"]
+albedo_color = Color(0.101960786, 0.11372549, 0.14117648, 1)
+metallic = 0.8
+roughness = 0.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_4uiri"]
+material = SubResource("StandardMaterial3D_i0y58")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgxbf"]
+emission_enabled = true
+emission = Color(1, 0.7176471, 0, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_w746k"]
+material = SubResource("StandardMaterial3D_pgxbf")
+radius = 0.18
+height = 0.36
+
+[node name="LumenDrone" type="CharacterBody3D" unique_id=1960809441]
+script = ExtResource("1_opow3")
+petrol_spee = null
+chase_speed = null
+vision_range = null
+close_detection_range = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=162144553]
+shape = SubResource("SphereShape3D_k5j8d")
+
+[node name="BodyMesh" type="MeshInstance3D" parent="." unique_id=641844869]
+mesh = SubResource("SphereMesh_4uiri")
+
+[node name="EyeMesh" type="MeshInstance3D" parent="." unique_id=562415857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
+mesh = SubResource("SphereMesh_w746k")
+
+[node name="EyeLight" type="SpotLight3D" parent="." unique_id=1602336604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+light_color = Color(1, 0.7176471, 0, 1)
+spot_range = 10.0
+spot_angle = 40.0
+
+[node name="VisionRay" type="RayCast3D" parent="." unique_id=876369542]
+target_position = Vector3(0, 0, -1)
