@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://s0oq4qpswqyk"]
 
 [ext_resource type="PackedScene" uid="uid://dk7poh0xnq8ji" path="res://player.tscn" id="1_c6gwx"]
+[ext_resource type="PackedScene" uid="uid://5rek8m7ntvws" path="res://lumen_drone.tscn" id="2_2dftf"]
 
 [node name="World" type="Node3D" unique_id=170261281]
 
@@ -12,3 +13,6 @@ size = Vector3(10, 1, 30)
 
 [node name="Player" parent="." unique_id=2134804852 instance=ExtResource("1_c6gwx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="LumenDrone" parent="." unique_id=1960809441 instance=ExtResource("2_2dftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2290764, -13.022341)
