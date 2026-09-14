@@ -10,6 +10,7 @@ extends CharacterBody3D
 var player: CharacterBody3D = null
 var is_chasing: bool = false
 var lost_timer: float = 0.0
+var is_restarting: bool = false 
 const COLOR_CALM: Color = Color(1.0, 0.72, 0.0) #Yellow
 const COLOR_ALERT: Color = Color(1.0, 0.05, 0.0)
 func _ready() -> void:
@@ -17,6 +18,8 @@ func _ready() -> void:
 		player = get_tree().get_first_node_in_group("player")
 		set_eye_color(COLOR_CALM)
 func _physics_process(delta: float) -> void:
+		if is_restarting:
+				return
 		if not is_instance_valid(player):
 				player = get_tree().get_first_node_in_group("player")
 				if not is_instance_valid(player):
@@ -48,6 +51,7 @@ func _physics_process(delta: float) -> void:
 				velocity = move_dir * chase_speed
 				if horizontal_dist <= kill_distance:
 						kill_player()
+						return
 		else:
 				velocity = velocity.move_toward(Vector3.ZERO, petrol_speed * delta)
 		move_and_slide()
@@ -56,7 +60,12 @@ func _physics_process(delta: float) -> void:
 				var collider = collision.get_collider()
 				if collider == player or (collider and collider.is_in_group("player")):
 						kill_player()
+						return
 func kill_player() -> void:
+		if is_restarting:
+				return
+		is_restarting = true
+		set_physics_process(false)
 		print("Caught by the Lumen Drone! Restarting...")
 		get_tree().reload_current_scene()
 func check_line_of_sight() -> bool:

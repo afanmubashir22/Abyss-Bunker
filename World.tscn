@@ -2,17 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://dk7poh0xnq8ji" path="res://player.tscn" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://5rek8m7ntvws" path="res://lumen_drone.tscn" id="2_2dftf"]
+[ext_resource type="PackedScene" uid="uid://ddt6qein3udhy" path="res://Crystal.tscn" id="3_bcbcq"]
 
 [node name="World" type="Node3D" unique_id=170261281]
 
 [node name="BunkerMap" type="Node3D" parent="." unique_id=925649601]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="BunkerMap" unique_id=1598540563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.53955, 0, 0)
 use_collision = true
-size = Vector3(10, 1, 30)
+size = Vector3(161.0791, 1, 30)
 
 [node name="Player" parent="." unique_id=2134804852 instance=ExtResource("1_c6gwx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="LumenDrone" parent="." unique_id=1960809441 instance=ExtResource("2_2dftf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2290764, -13.022341)
+
+[node name="Crystal" parent="." unique_id=1325181568 instance=ExtResource("3_bcbcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.495403, 2.5681727, 0)

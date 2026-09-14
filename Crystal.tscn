@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ddt6qein3udhy"]
+
+[ext_resource type="Script" uid="uid://c0jjvc7iv24o3" path="res://Crystal.gd" id="1_mbty2"]
+[ext_resource type="PackedScene" uid="uid://bxrl5gu80cx8m" path="res://bunker_assets/magiccrystal..ix.glb" id="2_i1u28"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mvmvt"]
+radius = 1.0
+
+[node name="Crystal" type="Area3D" unique_id=1325181568]
+script = ExtResource("1_mbty2")
+
+[node name="Sketchfab_Scene" parent="." unique_id=908057985 instance=ExtResource("2_i1u28")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2138978304]
+shape = SubResource("SphereShape3D_mvmvt")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1147961997]
+light_color = Color(0, 0.8980392, 1, 1)
+light_energy = 3.0
+omni_range = 4.0

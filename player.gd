@@ -1,10 +1,11 @@
 extends CharacterBody3D
-@export var walk_speed: float  = 4.5 
+@export var walk_speed: float = 4.5 
 @export var sprint_speed: float = 7.0
 @export var mouse_sensitivity: float = 0.003
 
 @onready var head: Node3D = $Head
 @onready var flashlight: SpotLight3D = $Head/Camera3D/SpotLight3D
+@onready var crystal_label: Label = %CrystalLabel
 
 var crystals_collected: int = 0
 var is_hidden: bool = false
@@ -12,6 +13,8 @@ var is_hidden: bool = false
 func _ready() -> void:
 		add_to_group("player")
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		update_hud()
+		
 func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				if not get_tree().paused:
@@ -44,4 +47,16 @@ func _physics_process(delta: float) -> void:
 				velocity.x = move_toward(velocity.x, 0, speed)
 				velocity.z = move_toward(velocity.z, 0, speed)
 		move_and_slide()
-	
+func add_crystal() -> void:
+		crystals_collected += 1
+		print("Crystal collected! Total: ", crystals_collected)
+		update_hud()
+		var hud_panel = get_node_or_null("HUD/CrystalHUD")
+		if is_instance_valid(hud_panel):
+				var tween = create_tween()
+				hud_panel.pivot_offset = hud_panel.size / 2.0
+				hud_panel.scale = Vector2(1.15, 1.15)
+				tween.tween_property(hud_panel, "scale", Vector2.ONE, 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+func update_hud() -> void:
+		if is_instance_valid(crystal_label):
+				crystal_label.text = "Crystals: " + str(crystals_collected) + " / 3"
