@@ -1,5 +1,5 @@
 extends CharacterBody3D
-@export var walk_speed: float = 4.5 
+@export var walk_speed: float = 4.5
 @export var sprint_speed: float = 7.0
 @export var mouse_sensitivity: float = 0.003
 
@@ -14,7 +14,6 @@ func _ready() -> void:
 		add_to_group("player")
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		update_hud()
-		
 func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				if not get_tree().paused:

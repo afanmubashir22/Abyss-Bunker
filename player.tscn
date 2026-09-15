@@ -64,6 +64,7 @@ theme_override_font_sizes/font_size = 18
 text = "◈ VOID CORES: 0 / 3"
 
 [node name="VictoryScreen" type="PanelContainer" parent="HUD" unique_id=1760736676]
+unique_name_in_owner = true
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,4 +89,4 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.6901961, 0.74509805, 0.77254903, 1)
 theme_override_font_sizes/font_size = 18
-text = "You survived the Lumen Drone. \\nPress ESC to restart."
+text = "You survived the Lumen Drone. \\Press \"R\" to restart."
