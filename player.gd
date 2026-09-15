@@ -28,7 +28,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventKey and event.pressed and not event.is_echo() and event.keycode == KEY_R:
 						var victory_ui = get_node_or_null("%VictoryScreen")
 						if is_instance_valid(victory_ui) and victory_ui.visible:
-										get_tree
+										get_tree().reload_current_scene()
 func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 				velocity.y -= 18.0 * delta
@@ -64,3 +64,9 @@ func add_crystal() -> void:
 func update_hud() -> void:
 		if is_instance_valid(crystal_label):
 				crystal_label.text = "Crystals: " + str(crystals_collected) + " / 3"
+func trigger_victory() -> void:
+				var victory_ui = get_node_or_null("%VictoryScreen")
+				if is_instance_valid(victory_ui):
+								victory_ui.visible = true
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+				set_physics_process(false)
