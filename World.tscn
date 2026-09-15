@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dk7poh0xnq8ji" path="res://player.tscn" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://5rek8m7ntvws" path="res://lumen_drone.tscn" id="2_2dftf"]
 [ext_resource type="PackedScene" uid="uid://ddt6qein3udhy" path="res://Crystal.tscn" id="3_bcbcq"]
+[ext_resource type="PackedScene" uid="uid://o72w5hopr8c6" path="res://EscapeGate.tscn" id="4_js7pq"]
 
 [node name="World" type="Node3D" unique_id=170261281]
 
@@ -21,3 +22,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2290764, -13.022341)
 
 [node name="Crystal" parent="." unique_id=1325181568 instance=ExtResource("3_bcbcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.495403, 2.5681727, 0)
+
+[node name="Crystal2" parent="." unique_id=1839055173 instance=ExtResource("3_bcbcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.22281, 2.5681727, 0)
+
+[node name="Crystal3" parent="." unique_id=967527666 instance=ExtResource("3_bcbcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.495403, 2.5681727, -4.641677)
+
+[node name="EscapeGate" parent="." unique_id=59254594 instance=ExtResource("4_js7pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.467588, 2.0492191, 9.046856)

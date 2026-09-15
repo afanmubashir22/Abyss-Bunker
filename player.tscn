@@ -19,6 +19,9 @@ border_color = Color(0, 0.9411765, 1, 0.6666667)
 corner_radius_top_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3pqv"]
+bg_color = Color(0.019607844, 0.02745098, 0.039215688, 0.93333334)
+
 [node name="Player" type="CharacterBody3D" unique_id=2134804852]
 script = ExtResource("1_4flbx")
 
@@ -59,3 +62,30 @@ theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 8
 theme_override_font_sizes/font_size = 18
 text = "◈ VOID CORES: 0 / 3"
+
+[node name="VictoryScreen" type="PanelContainer" parent="HUD" unique_id=1760736676]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i3pqv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/VictoryScreen" unique_id=1527098872]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="HUD/VictoryScreen/VBoxContainer" unique_id=275197331]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.9411765, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "BUNKER EVACUATED"
+
+[node name="Subtitle" type="Label" parent="HUD/VictoryScreen/VBoxContainer" unique_id=1566814114]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6901961, 0.74509805, 0.77254903, 1)
+theme_override_font_sizes/font_size = 18
+text = "You survived the Lumen Drone. \\nPress ESC to restart."

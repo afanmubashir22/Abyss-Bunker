@@ -25,6 +25,10 @@ func _unhandled_input(event: InputEvent) -> void:
 				head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 		if event is InputEventKey and event.pressed and not event.is_echo() and event.keycode == KEY_F:
 				flashlight.visible = not flashlight.visible
+		if event is InputEventKey and event.pressed and not event.is_echo() and event.keycode == KEY_R:
+						var victory_ui = get_node_or_null("%VictoryScreen")
+						if is_instance_valid(victory_ui) and victory_ui.visible:
+										get_tree
 func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 				velocity.y -= 18.0 * delta
