@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://5rek8m7ntvws" path="res://lumen_drone.tscn" id="2_2dftf"]
 [ext_resource type="PackedScene" uid="uid://ddt6qein3udhy" path="res://Crystal.tscn" id="3_bcbcq"]
 [ext_resource type="PackedScene" uid="uid://o72w5hopr8c6" path="res://EscapeGate.tscn" id="4_js7pq"]
+[ext_resource type="PackedScene" uid="uid://c6f5m4c2x1xa2" path="res://FlashlightItem.tscn" id="5_eu7l1"]
 
 [node name="World" type="Node3D" unique_id=170261281]
 
@@ -31,3 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.495403, 2.5681727, -4.641
 
 [node name="EscapeGate" parent="." unique_id=59254594 instance=ExtResource("4_js7pq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.467588, 2.0492191, 9.046856)
+
+[node name="FlashlightItem" parent="." unique_id=816178737 instance=ExtResource("5_eu7l1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.828732, 1.1596694, 0)

@@ -4,16 +4,22 @@ extends CharacterBody3D
 @export var mouse_sensitivity: float = 0.003
 
 @onready var head: Node3D = $Head
-@onready var flashlight: SpotLight3D = $Head/Camera3D/SpotLight3D
+@onready var flashlight: SpotLight3D = $Head/Camera3D/HandFlashlight/SpotLight3D
 @onready var crystal_label: Label = %CrystalLabel
+@onready var hand_flashlight: Node3D = $Head/Camera3D/HandFlashlight
 
 var crystals_collected: int = 0
 var is_hidden: bool = false
-
+var has_flashlight: bool = false
 func _ready() -> void:
 		add_to_group("player")
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		update_hud()
+		if is_instance_valid(hand_flashlight):
+				hand_flashlight.visible = false
+		if is_instance_valid(flashlight):
+				flashlight.visible = false
+		
 func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				if not get_tree().paused:
@@ -22,12 +28,14 @@ func _unhandled_input(event: InputEvent) -> void:
 				rotate_y(-event.relative.x * mouse_sensitivity)
 				head.rotate_x(-event.relative.y * mouse_sensitivity)
 				head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
-		if event is InputEventKey and event.pressed and not event.is_echo() and event.keycode == KEY_F:
-				flashlight.visible = not flashlight.visible
-		if event is InputEventKey and event.pressed and not event.is_echo() and event.keycode == KEY_R:
+		if event is InputEventKey and event.pressed and not event.is_echo():
+				if event.keycode == KEY_F:
+						if has_flashlight:
+								flashlight.visible = not flashlight.visible
+				elif event.keycode == KEY_R:
 						var victory_ui = get_node_or_null("%VictoryScreen")
 						if is_instance_valid(victory_ui) and victory_ui.visible:
-										get_tree().reload_current_scene()
+								get_tree().reload_current_scene()
 func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 				velocity.y -= 18.0 * delta
@@ -69,3 +77,7 @@ func trigger_victory() -> void:
 								victory_ui.visible = true
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 				set_physics_process(false)
+func pickup_flashlight() -> void:
+		has_flashlight = true
+		hand_flashlight.visible = true
+		flashlight.visible = true
