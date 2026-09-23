@@ -1,37 +1,109 @@
 [gd_scene format=3 uid="uid://s0oq4qpswqyk"]
 
 [ext_resource type="PackedScene" uid="uid://dk7poh0xnq8ji" path="res://player.tscn" id="1_c6gwx"]
-[ext_resource type="PackedScene" uid="uid://5rek8m7ntvws" path="res://lumen_drone.tscn" id="2_2dftf"]
-[ext_resource type="PackedScene" uid="uid://ddt6qein3udhy" path="res://Crystal.tscn" id="3_bcbcq"]
-[ext_resource type="PackedScene" uid="uid://o72w5hopr8c6" path="res://EscapeGate.tscn" id="4_js7pq"]
 [ext_resource type="PackedScene" uid="uid://c6f5m4c2x1xa2" path="res://FlashlightItem.tscn" id="5_eu7l1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dftf"]
+albedo_color = Color(0.1764706, 0.019607844, 0.019607844, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcbcq"]
+albedo_color = Color(0.17781216, 0.020425366, 0.020639032, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_js7pq"]
+albedo_color = Color(0.1764706, 0.019607844, 0.019607844, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eu7l1"]
+albedo_color = Color(0.1764706, 0.019607844, 0.019607844, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1v5b"]
+albedo_color = Color(0.1764706, 0.019607844, 0.019607844, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wygdx"]
+albedo_color = Color(0.1764706, 0.019607844, 0.019607844, 1)
 
 [node name="World" type="Node3D" unique_id=170261281]
 
 [node name="BunkerMap" type="Node3D" parent="." unique_id=925649601]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="BunkerMap" unique_id=1598540563]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.53955, 0, 0)
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="BunkerMap" unique_id=1924609462]
 use_collision = true
-size = Vector3(161.0791, 1, 30)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=998456793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.95174, 0)
+size = Vector3(300, 20, 400)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=241105801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.06592, 0)
+operation = 2
+size = Vector3(70, 10, 50)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=2111133764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.662678, 13.472705, -13.520355)
+size = Vector3(52.81611, 15.195541, 2.2871094)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="BunkerMap/CSGCombiner3D" unique_id=144318479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.875597, 15.289043, -16.235)
+radius = 1.0
+height = 10.760628
+material = SubResource("StandardMaterial3D_2dftf")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="BunkerMap/CSGCombiner3D" unique_id=990480903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.875597, 13.562516, -23.653183)
+radius = 1.0
+height = 15.16086
+material = SubResource("StandardMaterial3D_bcbcq")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="BunkerMap/CSGCombiner3D" unique_id=652607936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.509798, 15.179182, -23.420452)
+radius = 1.0
+height = 10.706918
+material = SubResource("StandardMaterial3D_js7pq")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="BunkerMap/CSGCombiner3D" unique_id=792115619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.014944, 15.262066, -16.391897)
+radius = 1.0
+height = 10.794075
+material = SubResource("StandardMaterial3D_eu7l1")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="BunkerMap/CSGCombiner3D" unique_id=1791369147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.686467, 14.958151, 2.702384)
+radius = 1.0
+height = 10.73859
+material = SubResource("StandardMaterial3D_p1v5b")
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="BunkerMap/CSGCombiner3D" unique_id=1080165526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.290472, 14.938213, 17.802082)
+radius = 1.0
+height = 10.932991
+material = SubResource("StandardMaterial3D_wygdx")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=726858559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.861, 14.929546, -2.227)
+operation = 2
+size = Vector3(100, 10, 9.455)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=1398608479]
+transform = Transform3D(0.024100646, 0, -0.9997095, 0, 1, 0, 0.9997095, 0, 0.024100646, -84.32047, 14.83225, -2.227295)
+operation = 2
+size = Vector3(100, 10, 9.455)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=1009107787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.573685, 14.881886, -2.237152)
+size = Vector3(1.1062012, 10.09671, 9.538513)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=149443531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.45385, 13.803421, -2.6231623)
+operation = 2
+size = Vector3(2.9343872, 7.7454834, 6.98909)
 
 [node name="Player" parent="." unique_id=2134804852 instance=ExtResource("1_c6gwx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="LumenDrone" parent="." unique_id=1960809441 instance=ExtResource("2_2dftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2290764, -13.022341)
-
-[node name="Crystal" parent="." unique_id=1325181568 instance=ExtResource("3_bcbcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.495403, 2.5681727, 0)
-
-[node name="Crystal2" parent="." unique_id=1839055173 instance=ExtResource("3_bcbcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.22281, 2.5681727, 0)
-
-[node name="Crystal3" parent="." unique_id=967527666 instance=ExtResource("3_bcbcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.495403, 2.5681727, -4.641677)
-
-[node name="EscapeGate" parent="." unique_id=59254594 instance=ExtResource("4_js7pq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.467588, 2.0492191, 9.046856)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.83998, 13.676157, -18.587246)
 
 [node name="FlashlightItem" parent="." unique_id=816178737 instance=ExtResource("5_eu7l1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.828732, 1.1596694, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.759773, 11.157927, -18.637745)
+
+[node name="Light" type="Node3D" parent="." unique_id=1463218274]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light" unique_id=2090883979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.525383, 15.565373, -15.316941)
+omni_range = 100.0

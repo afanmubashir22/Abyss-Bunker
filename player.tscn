@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://clf3ga0mtjae6" path="res://PauseMenu.tscn" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+height = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onrkg"]
 content_margin_left = 16.0
@@ -27,7 +28,7 @@ bg_color = Color(0.019607844, 0.02745098, 0.039215688, 0.93333334)
 script = ExtResource("1_4flbx")
 
 [node name="Head" type="Node3D" parent="." unique_id=1750788291]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99443, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=360143820]
 
@@ -37,6 +38,9 @@ visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D/HandFlashlight" unique_id=990992926]
 transform = Transform3D(-0.00055841997, 0, 0.9999998, 0, 1, 0, -0.9999998, 0, -0.00055841997, -2.440885, 0, 0)
+light_color = Color(1, 1, 0.78431374, 1)
+light_energy = 5.0
+spot_range = 20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=86720577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

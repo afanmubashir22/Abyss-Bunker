@@ -1,6 +1,6 @@
 extends CharacterBody3D
 @export var walk_speed: float = 4.5
-@export var sprint_speed: float = 7.0
+@export var sprint_speed: float = 11
 @export var mouse_sensitivity: float = 0.003
 
 @onready var head: Node3D = $Head
