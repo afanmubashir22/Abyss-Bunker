@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dj44xux532dm0"]
+
+[ext_resource type="Script" uid="uid://c8er0tnw1utoe" path="res://keycard_item.gd" id="1_gmuvd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lo542"]
+size = Vector3(3.112976, 2.4698486, 2.5079346)
+
+[node name="KeycardItem" type="Area3D" unique_id=929019784]
+script = ExtResource("1_gmuvd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1065911831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19406128, 0.7349243, -0.14581299)
+shape = SubResource("BoxShape3D_lo542")

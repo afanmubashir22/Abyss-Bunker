@@ -11,6 +11,7 @@ extends CharacterBody3D
 var crystals_collected: int = 0
 var is_hidden: bool = false
 var has_flashlight: bool = false
+var has_keycard: bool = false
 func _ready() -> void:
 		add_to_group("player")
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -81,3 +82,6 @@ func pickup_flashlight() -> void:
 		has_flashlight = true
 		hand_flashlight.visible = true
 		flashlight.visible = true
+func pickup_keycard() -> void:
+		has_keycard = true
+		print("Keycard acquired!")
