@@ -1,6 +1,7 @@
 extends CharacterBody3D
 @export var walk_speed: float = 4.5
 @export var sprint_speed: float = 11
+@export var jump_velocity: float = 4.5
 @export var mouse_sensitivity: float = 0.003
 
 @onready var head: Node3D = $Head
@@ -40,6 +41,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 				velocity.y -= 18.0 * delta
+		if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
+						velocity.y = jump_velocity
 		var speed = sprint_speed if Input.is_key_pressed(KEY_SHIFT) else walk_speed
 		var input_dir := Vector2.ZERO
 		if Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_UP):
