@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c6ocx6foj0imj"]
+
+[ext_resource type="Script" uid="uid://cvo63cjeoheu3" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://vwq6ppnsj2px" path="res://bunker_assets/2909963.jpg" id="2_7vrkn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+bg_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 1, 1, 1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 1, 1, 1)
+shadow_size = 4
+
+[node name="MainMenu" type="Control" unique_id=1269389897]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1512446436]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7vrkn")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=316644921]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -62.0
+offset_right = 59.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1773977436]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 64
+text = "ABYSS BUNKER"
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=1198738582]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_06t4h")
+text = "CONTINUE"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=2109690613]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+text = "QUIT
+"
+
+[connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

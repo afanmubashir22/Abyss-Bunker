@@ -20,4 +20,6 @@ func toggle_pause() -> void:
 func _on_resume_pressed() -> void:
 		toggle_pause()
 func  _on_quit_pressed() -> void:
-		get_tree().quit()
+		get_tree().paused = false
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_tree().change_scene_to_file("res://main_menu.tscn")
