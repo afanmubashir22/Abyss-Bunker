@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0jjvc7iv24o3" path="res://Crystal.gd" id="1_mbty2"]
 [ext_resource type="PackedScene" uid="uid://bxrl5gu80cx8m" path="res://bunker_assets/magiccrystal..ix.glb" id="2_i1u28"]
+[ext_resource type="AudioStream" uid="uid://c50o8e5h5xww7" path="res://bunker_assets/freesound_community-blink-93025.mp3" id="3_i1u28"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mvmvt"]
 radius = 1.0
@@ -19,3 +20,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1444062, 0)
 light_color = Color(0, 0.8980392, 1, 1)
 light_energy = 5.0
 omni_range = 50.0
+
+[node name="PickupSound" type="AudioStreamPlayer3D" parent="." unique_id=49443742]
+stream = ExtResource("3_i1u28")

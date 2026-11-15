@@ -3,12 +3,12 @@ extends CharacterBody3D
 @export var sprint_speed: float = 11
 @export var jump_velocity: float = 4.5
 @export var mouse_sensitivity: float = 0.003
-
+@export var fall_death_height: float = -25.0
 @onready var head: Node3D = $Head
 @onready var flashlight: SpotLight3D = $Head/Camera3D/HandFlashlight/SpotLight3D
 @onready var crystal_label: Label = %CrystalLabel
 @onready var hand_flashlight: Node3D = $Head/Camera3D/HandFlashlight
-
+@onready var jump_sound: AudioStreamPlayer = $JumpSoundPlayer
 var crystals_collected: int = 0
 var is_hidden: bool = false
 var has_flashlight: bool = false
@@ -39,10 +39,15 @@ func _unhandled_input(event: InputEvent) -> void:
 						if is_instance_valid(victory_ui) and victory_ui.visible:
 								get_tree().reload_current_scene()
 func _physics_process(delta: float) -> void:
+		if position.y < fall_death_height:
+						get_tree().reload_current_scene()
+						return
 		if not is_on_floor():
 				velocity.y -= 18.0 * delta
 		if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
 						velocity.y = jump_velocity
+						if is_instance_valid(jump_sound):
+										jump_sound.play()
 		var speed = sprint_speed if Input.is_key_pressed(KEY_SHIFT) else walk_speed
 		var input_dir := Vector2.ZERO
 		if Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_UP):

@@ -196,6 +196,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.64838, 5.911846, 30.1771
 size = Vector3(8.41449, 1, 9.165283)
 material = SubResource("StandardMaterial3D_ee7l0")
 
+[node name="CSGBox3D34" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=960682422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.64838, 5.911846, 14.219736)
+size = Vector3(8.41449, 1, 9.165283)
+material = SubResource("StandardMaterial3D_ee7l0")
+
+[node name="CSGBox3D35" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=2142975720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.78708, 5.911846, -2.034275)
+size = Vector3(11.909882, 1, 9.165283)
+material = SubResource("StandardMaterial3D_ee7l0")
+
+[node name="CSGBox3D37" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=574386054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.74664, 8.854032, -2.034275)
+size = Vector3(8.41449, 1, 9.165283)
+material = SubResource("StandardMaterial3D_ee7l0")
+
 [node name="CSGBox3D16" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=739723924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186.07736, 7.55171, 32.81536)
 size = Vector3(27.70623, 1, 4.0338135)
@@ -243,9 +258,45 @@ size = Vector3(9.356445, 9.953308, 89.394775)
 material = SubResource("StandardMaterial3D_jyqkj")
 
 [node name="CSGBox3D27" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=203438834]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.66243, 14.851191, -85.904434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.79408, 14.851191, -84.46628)
 operation = 2
-size = Vector3(36.336426, 9.953308, 12.539001)
+size = Vector3(124.59973, 9.953308, 8.904411)
+material = SubResource("StandardMaterial3D_jyqkj")
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=1312861044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.1774, 14.851191, -129.4095)
+operation = 2
+size = Vector3(124.59973, 9.953308, 8.904411)
+material = SubResource("StandardMaterial3D_jyqkj")
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=132509907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.22058, 14.851191, -165.13316)
+operation = 2
+size = Vector3(66.6861, 9.953308, 8.904411)
+material = SubResource("StandardMaterial3D_jyqkj")
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=107206328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -202.35431, 14.851191, -165.13316)
+operation = 2
+size = Vector3(66.6861, 9.953308, 8.904411)
+material = SubResource("StandardMaterial3D_jyqkj")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=1404672604]
+transform = Transform3D(-0.08562562, 0, 0.9963274, 0, 1, 0, -0.9963274, 0, -0.08562562, -148.7693, 14.851191, -102.73008)
+operation = 2
+size = Vector3(124.59973, 9.953308, 8.904411)
+material = SubResource("StandardMaterial3D_jyqkj")
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=601351]
+transform = Transform3D(-0.08562562, 0, 0.9963274, 0, 1, 0, -0.9963274, 0, -0.08562562, -165.92905, 14.851191, -102.46041)
+operation = 2
+size = Vector3(124.59973, 9.953308, 8.904411)
+material = SubResource("StandardMaterial3D_jyqkj")
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=889131130]
+transform = Transform3D(-0.08562562, 0, 0.9963274, 0, 1, 0, -0.9963274, 0, -0.08562562, -212.99335, 14.851191, -116.54816)
+operation = 2
+size = Vector3(152.87909, 9.953308, 8.904411)
 material = SubResource("StandardMaterial3D_jyqkj")
 
 [node name="Player" parent="." unique_id=2134804852 instance=ExtResource("1_c6gwx")]
@@ -356,7 +407,7 @@ transform = Transform3D(0.049035225, 0, 0, 0, 0.049035225, 0, 0, 0, 0.049035225,
 transform = Transform3D(0.049035225, 0, 0, 0, 0.049035225, 0, 0, 0, 0.049035225, -33.529236, 10.081232, -8.113163)
 
 [node name="Sketchfab_Scene32" parent="models" unique_id=581860784 instance=ExtResource("5_fvag4")]
-transform = Transform3D(0.049035225, 0, 0, 0, 0.049035225, 0, 0, 0, 0.049035225, -77.463684, 10.081232, -6.072199)
+transform = Transform3D(0.049035225, 0, 0, 0, 0.049035225, 0, 0, 0, 0.049035225, -77.463684, 10.081232, -5.817646)
 
 [node name="Sketchfab_Scene33" parent="models" unique_id=1145621063 instance=ExtResource("5_fvag4")]
 transform = Transform3D(0.049035225, 0, 0, 0, 0.049035225, 0, 0, 0, 0.049035225, -77.422516, 10.081232, 1.4021444)
@@ -416,8 +467,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.52418, 13.899672, -140.83
 [node name="Crystal" parent="Crystals" unique_id=413374265 instance=ExtResource("6_p1v5b")]
 transform = Transform3D(3.1112058, 0, 0, 0, 3.1112058, 0, 0, 0, 3.1112058, -138.60974, 8.961334, -33.13407)
 
-[node name="Crystal2" parent="Crystals" unique_id=1417757730 instance=ExtResource("6_p1v5b")]
-transform = Transform3D(3.1112058, 0, 0, 0, 3.1112058, 0, 0, 0, 3.1112058, -118.99895, 11.81595, -85.82416)
+[node name="Crystal4" parent="Crystals" unique_id=1325181568 instance=ExtResource("6_p1v5b")]
+transform = Transform3D(3.1112058, 0, 0, 0, 3.1112058, 0, 0, 0, 3.1112058, -145.60974, 8.961334, -33.13407)
 
-[node name="Crystal3" parent="Crystals" unique_id=1325181568 instance=ExtResource("6_p1v5b")]
+[node name="Crystal2" parent="Crystals" unique_id=1417757730 instance=ExtResource("6_p1v5b")]
+transform = Transform3D(3.1112058, 0, 0, 0, 3.1112058, 0, 0, 0, 3.1112058, -95.868355, 11.81595, -164.4399)
+
+[node name="Crystal3" parent="Crystals" unique_id=126760681 instance=ExtResource("6_p1v5b")]
 transform = Transform3D(2.2225428, 0, 0, 0, 2.2225428, 0, 0, 0, 2.2225428, -88.22389, 11.387404, 181.25735)

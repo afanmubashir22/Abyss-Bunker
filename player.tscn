@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://depii8jg15scy" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://b8gceubhf6gs0" path="res://bunker_assets/vintage_flashlight.glb" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://clf3ga0mtjae6" path="res://PauseMenu.tscn" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://sqa22f4ajeuh" path="res://bunker_assets/lexin_music-space-ambient-sci-fi-121842.mp3" id="4_sweqy"]
+[ext_resource type="AudioStream" uid="uid://bsriyp4q1ss7h" path="res://bunker_assets/wolfy_sanic-jump-15984.mp3" id="5_2hs0m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
 height = 5.0
@@ -98,3 +100,10 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.6901961, 0.74509805, 0.77254903, 1)
 theme_override_font_sizes/font_size = 18
 text = "You survived the Lumen Drone. \\Press \"R\" to restart."
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=984116884]
+stream = ExtResource("4_sweqy")
+autoplay = true
+
+[node name="JumpSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1456767989]
+stream = ExtResource("5_2hs0m")

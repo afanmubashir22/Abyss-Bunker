@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6ocx6foj0imj"]
 
 [ext_resource type="Script" uid="uid://cvo63cjeoheu3" path="res://main_menu.gd" id="1_06t4h"]
-[ext_resource type="Texture2D" uid="uid://vwq6ppnsj2px" path="res://bunker_assets/2909963.jpg" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://cc0fhjykedrvp" path="res://bunker_assets/vent_port_blend_0.png" id="2_7vrkn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
 bg_color = Color(0.27387273, 0.27387273, 0.27387273, 1)

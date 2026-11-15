@@ -1,5 +1,6 @@
 extends Area3D
 var player_in_range: bool = false
+@onready var pickup_sound: AudioStreamPlayer3D = $PickupSound
 func _ready() -> void:
 		body_entered.connect(_on_body_entered)
 		body_exited.connect(_on_body_exited)
@@ -14,4 +15,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				var player = get_tree().get_first_node_in_group("player")
 				if player and player.has_method("pickup_flashlight"):
 						player.pickup_flashlight()
+						player_in_range = false
+						$Sketchfab_Scene.visible = false
+						$CollisionShape3D.set_deferred("disabled", true)
+						pickup_sound.play()
+						await pickup_sound.finished
 						queue_free()
