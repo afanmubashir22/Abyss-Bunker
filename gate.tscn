@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dw81s5kt6wkmy"]
+
+[ext_resource type="Script" uid="uid://elvahvbr43xj" path="res://gate.gd" id="1_15vrf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ikl61"]
+size = Vector3(5.8, 7.2, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5lukw"]
+size = Vector3(5.8, 7.2, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4oabi"]
+size = Vector3(5.8939075, 8.505615, 6.0189896)
+
+[node name="Gate" type="Node3D" unique_id=741916715]
+script = ExtResource("1_15vrf")
+
+[node name="GateBody" type="StaticBody3D" parent="." unique_id=974487663]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GateBody" unique_id=303366544]
+mesh = SubResource("BoxMesh_ikl61")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateBody" unique_id=2128985553]
+shape = SubResource("BoxShape3D_5lukw")
+
+[node name="TriggerArea" type="Area3D" parent="." unique_id=1403905711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.1161933)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea" unique_id=1993814671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12632656, 0.61828613, -2.9639168)
+shape = SubResource("BoxShape3D_4oabi")
