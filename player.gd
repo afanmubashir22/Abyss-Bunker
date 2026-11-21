@@ -4,15 +4,25 @@ extends CharacterBody3D
 @export var jump_velocity: float = 4.5
 @export var mouse_sensitivity: float = 0.003
 @export var fall_death_height: float = -25.0
+@export var crouch_speed: float = 2.5
+@export var crouch_depth: float = 2.0
+@export var crouch_lerp_speed: float = 10.0
+@onready var collision_shape: CollisionShape3D = $CollisionShape3D
 @onready var head: Node3D = $Head
 @onready var flashlight: SpotLight3D = $Head/Camera3D/HandFlashlight/SpotLight3D
 @onready var crystal_label: Label = %CrystalLabel
 @onready var hand_flashlight: Node3D = $Head/Camera3D/HandFlashlight
 @onready var jump_sound: AudioStreamPlayer = $JumpSoundPlayer
+@onready var message_label: Label = %MessageLabel
+var message_tween: Tween
 var crystals_collected: int = 0
 var is_hidden: bool = false
 var has_flashlight: bool = false
 var has_keycard: bool = false
+var  is_crouching: bool = false
+var stand_head_y: float = 0.0
+var stand_height: float = 5.0
+var stand_col_y: float = 1.0
 func _ready() -> void:
 		add_to_group("player")
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -21,7 +31,12 @@ func _ready() -> void:
 				hand_flashlight.visible = false
 		if is_instance_valid(flashlight):
 				flashlight.visible = false
-		
+		if is_instance_valid(message_label):
+				message_label.visible = false
+		stand_head_y = head.position.y
+		stand_col_y = collision_shape.position.y
+		if collision_shape.shape is CapsuleShape3D:
+				stand_height = collision_shape.shape.height
 func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				if not get_tree().paused:
@@ -39,6 +54,17 @@ func _unhandled_input(event: InputEvent) -> void:
 						if is_instance_valid(victory_ui) and victory_ui.visible:
 								get_tree().reload_current_scene()
 func _physics_process(delta: float) -> void:
+		is_crouching = Input.is_key_pressed(KEY_CTRL) or Input.is_key_pressed(KEY_C)
+		
+		var target_head_y = stand_head_y - crouch_depth if is_crouching else stand_head_y
+		head.position.y = lerp(head.position.y,target_head_y, crouch_lerp_speed * delta)
+		
+		if collision_shape.shape is CapsuleShape3D:
+				var target_height = stand_height - crouch_depth if is_crouching else stand_height
+				collision_shape.shape.height = lerp(collision_shape.shape.height, target_height, crouch_lerp_speed * delta)
+				
+				var target_col_y = stand_col_y - (crouch_depth / 2.0) if is_crouching else stand_col_y
+				collision_shape.position.y = lerp(collision_shape.position.y, target_col_y, crouch_lerp_speed * delta)
 		if position.y < fall_death_height:
 						get_tree().reload_current_scene()
 						return
@@ -48,7 +74,11 @@ func _physics_process(delta: float) -> void:
 						velocity.y = jump_velocity
 						if is_instance_valid(jump_sound):
 										jump_sound.play()
-		var speed = sprint_speed if Input.is_key_pressed(KEY_SHIFT) else walk_speed
+		var speed = walk_speed
+		if is_crouching:
+				speed = crouch_speed
+		elif Input.is_key_pressed(KEY_SHIFT):
+				speed = sprint_speed
 		var input_dir := Vector2.ZERO
 		if Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_UP):
 				input_dir.y -= 1
@@ -93,3 +123,14 @@ func pickup_flashlight() -> void:
 func pickup_keycard() -> void:
 		has_keycard = true
 		print("Keycard acquired!")
+		show_message("Keycard Acquired!")
+func show_message(text: String, duration: float = 2.5) -> void:
+		if not is_instance_valid(message_label):
+				return
+		message_label.text = text
+		message_label.visible = true
+		if message_tween:
+				message_tween.kill()
+		message_tween = create_tween()
+		message_tween.tween_interval(duration)
+		message_tween.tween_callback(func(): message_label.visible = false)

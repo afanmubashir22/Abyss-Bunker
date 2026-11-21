@@ -15,9 +15,10 @@ func _on_trigger_entered(body: Node3D) -> void:
 				return
 		if body.is_in_group("player"):
 				if body.has_keycard:
+						body.show_message("Door Unlocked!")
 						open_gate()
 				else:
-						print("Gate is locked! You need the keycard.")
+						body.show_message("Gate is locked! You need the keycard.")
 func open_gate() -> void:
 		is_open = true
 		var tween = create_tween()
