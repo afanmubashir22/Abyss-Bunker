@@ -26,6 +26,22 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3pqv"]
 bg_color = Color(0.019607844, 0.02745098, 0.039215688, 0.93333334)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sweqy"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.78431374)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Player" type="CharacterBody3D" unique_id=2134804852]
 script = ExtResource("1_4flbx")
 jump_velocity = 10.0
@@ -54,10 +70,10 @@ shape = SubResource("CapsuleShape3D_4flbx")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=491818578]
 
 [node name="CrystalHUD" type="PanelContainer" parent="HUD" unique_id=590969567]
-offset_left = 30.0
-offset_top = 30.0
-offset_right = 70.0
-offset_bottom = 70.0
+offset_left = -5.0
+offset_top = 11.0
+offset_right = 200.0
+offset_bottom = 53.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_onrkg")
 
 [node name="CrystalLabel" type="Label" parent="HUD/CrystalHUD" unique_id=934677809]
@@ -116,6 +132,25 @@ grow_vertical = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
+
+[node name="ObjectivesHUD" type="PanelContainer" parent="HUD" unique_id=1594180282]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -269.0
+offset_top = 8.0
+offset_right = -25.0
+offset_bottom = 58.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sweqy")
+
+[node name="ObjectivesLabel" type="Label" parent="HUD/ObjectivesHUD" unique_id=1367123373]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 2
+autowrap_mode = 3
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=984116884]
 stream = ExtResource("4_sweqy")
