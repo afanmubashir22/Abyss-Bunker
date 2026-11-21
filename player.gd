@@ -11,14 +11,16 @@ extends CharacterBody3D
 @onready var head: Node3D = $Head
 @onready var flashlight: SpotLight3D = $Head/Camera3D/HandFlashlight/SpotLight3D
 @onready var crystal_label: Label = %CrystalLabel
+@onready var bgm_player: AudioStreamPlayer = $BGMPlayer
 @onready var hand_flashlight: Node3D = $Head/Camera3D/HandFlashlight
 @onready var jump_sound: AudioStreamPlayer = $JumpSoundPlayer
 @onready var objectives: Array[String] = [
 				"OBJECTIVE 1:\nFind the keycard",
-				"OBJECTIVE 2:\nEscape the drones and get the Void Core\n(WARNING: THE DRONES ARE ATTRACTED BY LIGHT)",
-				"OBJECTIVE 3:\nMove to the Second side and acruire void core red",
-				"OBJECTIVE 4:\nMove to another Side to complete the maze and acquire VOID CORE GREEN",
-				"OBJECTIVE 5:\nESCAPE THROUGH THE MAIN GATE."
+				"OBJECTIVE 2:\nOpen the KEYCARD DOOR and go LEFT",
+				"OBJECTIVE 3:\nEscape the drones and get the Void Core\n(WARNING: THE DRONES ARE ATTRACTED BY LIGHT)",
+				"OBJECTIVE 4:\nMove to the Second side and acruire void core red",
+				"OBJECTIVE 5:\nMove to another Side to complete the maze and acquire VOID CORE GREEN",
+				"OBJECTIVE 6:\nESCAPE THROUGH THE MAIN GATE."
 		]
 var current_objective: int = 0
 @onready var message_label: Label = %MessageLabel
@@ -47,6 +49,8 @@ func _ready() -> void:
 		if collision_shape.shape is CapsuleShape3D:
 				stand_height = collision_shape.shape.height
 		update_objective()
+		if is_instance_valid(bgm_player):
+				bgm_player.finished.connect(bgm_player.play)
 func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				if not get_tree().paused:
@@ -118,11 +122,11 @@ func add_crystal() -> void:
 				hud_panel.scale = Vector2(1.15, 1.15)
 				tween.tween_property(hud_panel, "scale", Vector2.ONE, 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		if crystals_collected == 1:
-				current_objective = 2
-		elif crystals_collected == 2:
 				current_objective = 3
-		elif crystals_collected >= 3:
+		elif crystals_collected == 2:
 				current_objective = 4
+		elif crystals_collected >= 3:
+				current_objective = 5
 		update_objective()
 func update_hud() -> void:
 		if is_instance_valid(crystal_label):
@@ -157,3 +161,7 @@ func show_message(text: String, duration: float = 2.5) -> void:
 func update_objective() -> void:
 		if is_instance_valid(objectives_label) and current_objective < objectives.size():
 				objectives_label.text = objectives[current_objective]
+func advance_objective(next_index: int) -> void:
+		if current_objective < next_index:
+				current_objective = next_index
+				update_objective()

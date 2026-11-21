@@ -16,6 +16,7 @@ func _on_trigger_entered(body: Node3D) -> void:
 		if body.is_in_group("player"):
 				if body.has_keycard:
 						body.show_message("Door Unlocked!")
+						body.advance_objective(2)
 						open_gate()
 				else:
 						body.show_message("Gate is locked! You need the keycard.")

@@ -15,11 +15,5 @@ script = ExtResource("1_mbty2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2138978304]
 shape = SubResource("SphereShape3D_mvmvt")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1147961997]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1444062, 0)
-light_color = Color(0, 0.8980392, 1, 1)
-light_energy = 5.0
-omni_range = 50.0
-
 [node name="PickupSound" type="AudioStreamPlayer3D" parent="." unique_id=49443742]
 stream = ExtResource("3_i1u28")
