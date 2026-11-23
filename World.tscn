@@ -525,7 +525,7 @@ transform = Transform3D(0.049035225, 0, 0, 0, 0.049035225, 0, 0, 0, 0.049035225,
 transform = Transform3D(0.049035225, 0, 0, 0, 0.049035225, 0, 0, 0, 0.049035225, -77.463684, 10.081232, -5.817646)
 
 [node name="Sketchfab_Scene33" parent="models" unique_id=1145621063 instance=ExtResource("5_fvag4")]
-transform = Transform3D(0.049035225, 0, 0, 0, 0.049035225, 0, 0, 0, 0.049035225, -77.422516, 10.081232, 1.4021444)
+transform = Transform3D(0.049035225, 0, 0, 0, 0.049035225, 0, 0, 0, 0.049035225, -77.42343, 10.10558, 1.4295917)
 
 [node name="Sketchfab_Scene34" parent="models" unique_id=787275793 instance=ExtResource("10_fvag4")]
 transform = Transform3D(0.05139235, 0, -3.3458366, 0, 3.3462315, 0, 3.3458366, 0, 0.05139235, 34.893288, 10.065916, -19.949532)
@@ -534,7 +534,7 @@ transform = Transform3D(0.05139235, 0, -3.3458366, 0, 3.3462315, 0, 3.3458366, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.02323, 15.384195, -6.9023013)
 
 [node name="Sketchfab_Scene37" parent="models" unique_id=1920247671 instance=ExtResource("11_f5c0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.034971, 15.384195, -12.317673)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.034971, 16.218397, -12.317673)
 
 [node name="Drones" type="Node3D" parent="." unique_id=1475146113]
 
@@ -622,7 +622,7 @@ omni_range = 8.957848
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.94094, 12.339598, 39.459114)
 
 [node name="Gate" parent="." unique_id=741916715 instance=ExtResource("14_gn8l5")]
-transform = Transform3D(-0.031201467, 0, -0.9995131, 0, 1, 0, 0.9995131, 0, -0.031201467, -35.29875, 13.5730505, -2.0033684)
+transform = Transform3D(-0.031201467, 0, -0.9995131, 0, 1, 0, 0.9995131, 0, -0.031201467, -35.75409, 13.604959, -2.0377731)
 
 [node name="Sketchfab_Scene" parent="." unique_id=1262890363 instance=ExtResource("16_1fphk")]
 transform = Transform3D(10.435601, 0, 0, 0, 10.435601, 0, 0, 0, 10.435601, 10.886534, 15.89192, 21.194384)
