@@ -16,12 +16,13 @@ extends CharacterBody3D
 @onready var hand_screwdriver: Node3D = $Head/Camera3D/HandScrewdriver
 @onready var jump_sound: AudioStreamPlayer = $JumpSoundPlayer
 @onready var objectives: Array[String] = [
-				"OBJECTIVE 1:\nFind the keycard",
-				"OBJECTIVE 2:\nOpen the KEYCARD DOOR and go LEFT",
-				"OBJECTIVE 3:\nEscape the drones and get the Void Core\n(WARNING: THE DRONES ARE ATTRACTED BY LIGHT)",
-				"OBJECTIVE 4:\nMove to the Second side and acruire void core red",
-				"OBJECTIVE 5:\nMove to another Side to complete the maze and acquire VOID CORE GREEN",
-				"OBJECTIVE 6:\nESCAPE THROUGH THE MAIN GATE."
+				"OBJECTIVE 1:\nLocate the screwdriver",
+				"OBJECTIVE 2:\nFind the keycard",
+				"OBJECTIVE 3:\nOpen the KEYCARD DOOR and go LEFT",
+				"OBJECTIVE 4:\nEscape the drones and get the Void Core\n(WARNING: THE DRONES ARE ATTRACTED BY LIGHT)",
+				"OBJECTIVE 5:\nMove to the Second side and acruire void core red",
+				"OBJECTIVE 6:\nMove to another Side to complete the maze and acquire VOID CORE GREEN",
+				"OBJECTIVE 7:\nESCAPE THROUGH THE MAIN GATE."
 		]
 var current_objective: int = 0
 @onready var message_label: Label = %MessageLabel
@@ -126,11 +127,11 @@ func add_crystal() -> void:
 				hud_panel.scale = Vector2(1.15, 1.15)
 				tween.tween_property(hud_panel, "scale", Vector2.ONE, 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		if crystals_collected == 1:
-				current_objective = 3
-		elif crystals_collected == 2:
 				current_objective = 4
-		elif crystals_collected >= 3:
+		elif crystals_collected == 2:
 				current_objective = 5
+		elif crystals_collected >= 3:
+				current_objective = 6
 		update_objective()
 func update_hud() -> void:
 		if is_instance_valid(crystal_label):
@@ -149,9 +150,7 @@ func pickup_keycard() -> void:
 		has_keycard = true
 		print("Keycard acquired!")
 		show_message("Keycard Acquired!")
-		if current_objective == 0:
-				current_objective = 1
-				update_objective()
+		advance_objective(2)
 func show_message(text: String, duration: float = 2.5) -> void:
 		if not is_instance_valid(message_label):
 				return
@@ -174,3 +173,4 @@ func pickup_screwdriver() -> void:
 		if is_instance_valid(hand_screwdriver):
 				hand_screwdriver.visible = true
 		show_message("Screwdriver Acquired!")
+		advance_objective(1)

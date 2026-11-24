@@ -53,7 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99443, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=360143820]
 
 [node name="HandFlashlight" parent="Head/Camera3D" unique_id=725483245 instance=ExtResource("2_i3pqv")]
-transform = Transform3D(0.008113832, 0, -0.09967028, 0, 0.1, 0, 0.09967028, 0, 0.008113832, 0.4, -0.30000007, -0.5)
+transform = Transform3D(0.008113832, 0, -0.09967028, 0, 0.1, 0, 0.09967028, 0, 0.008113832, 0.6076549, -0.80544186, -1.3143485)
 visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D/HandFlashlight" unique_id=990992926]
@@ -63,7 +63,7 @@ light_energy = 5.0
 spot_range = 20.0
 
 [node name="HandScrewdriver" type="Node3D" parent="Head/Camera3D" unique_id=1264665771]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.3, -0.6)
+transform = Transform3D(1, 0, 0, 0, 0.99597096, -0.08967656, 0, 0.08967656, 0.99597096, -0.4, -0.29999995, -1.2338594)
 visible = false
 
 [node name="Sketchfab_Scene" parent="Head/Camera3D/HandScrewdriver" unique_id=2045732498 instance=ExtResource("3_x3wgy")]
