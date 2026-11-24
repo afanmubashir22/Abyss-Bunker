@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://r2fuy78min11"]
+
+[ext_resource type="PackedScene" uid="uid://c016qn086klc" path="res://bunker_assets/screwdriver__.rawscan. (1).glb" id="1_f86yn"]
+[ext_resource type="Script" uid="uid://dv7p0gm8jdx47" path="res://Script/screwdriver.gd" id="1_m8275"]
+[ext_resource type="AudioStream" uid="uid://c50o8e5h5xww7" path="res://bunker_assets/freesound_community-blink-93025.mp3" id="2_m8275"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jwx61"]
+size = Vector3(1.7280273, 1, 1)
+
+[node name="Screwdriver" type="Area3D" unique_id=1467322093]
+script = ExtResource("1_m8275")
+
+[node name="Sketchfab_Scene" parent="." unique_id=2045732498 instance=ExtResource("1_f86yn")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1747221141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19702148, 0, 0)
+shape = SubResource("BoxShape3D_jwx61")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="." unique_id=1878387958]
+stream = ExtResource("2_m8275")

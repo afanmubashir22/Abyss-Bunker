@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://o72w5hopr8c6"]
 
-[ext_resource type="Script" uid="uid://cfg23y6x5lq08" path="res://EscapeGate.gd" id="1_1e27x"]
+[ext_resource type="Script" uid="uid://cfg23y6x5lq08" path="res://Script/EscapeGate.gd" id="1_1e27x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6klj3"]
 size = Vector3(8.7, 9.5, 3)

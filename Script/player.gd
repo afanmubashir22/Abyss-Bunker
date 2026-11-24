@@ -13,6 +13,7 @@ extends CharacterBody3D
 @onready var crystal_label: Label = %CrystalLabel
 @onready var bgm_player: AudioStreamPlayer = $BGMPlayer
 @onready var hand_flashlight: Node3D = $Head/Camera3D/HandFlashlight
+@onready var hand_screwdriver: Node3D = $Head/Camera3D/HandScrewdriver
 @onready var jump_sound: AudioStreamPlayer = $JumpSoundPlayer
 @onready var objectives: Array[String] = [
 				"OBJECTIVE 1:\nFind the keycard",
@@ -29,6 +30,7 @@ var message_tween: Tween
 var crystals_collected: int = 0
 var is_hidden: bool = false
 var has_flashlight: bool = false
+var has_screwdriver: bool = false
 var has_keycard: bool = false
 var  is_crouching: bool = false
 var stand_head_y: float = 0.0
@@ -44,6 +46,8 @@ func _ready() -> void:
 				flashlight.visible = false
 		if is_instance_valid(message_label):
 				message_label.visible = false
+		if is_instance_valid(hand_screwdriver):
+				hand_screwdriver.visible = false
 		stand_head_y = head.position.y
 		stand_col_y = collision_shape.position.y
 		if collision_shape.shape is CapsuleShape3D:
@@ -165,3 +169,8 @@ func advance_objective(next_index: int) -> void:
 		if current_objective < next_index:
 				current_objective = next_index
 				update_objective()
+func pickup_screwdriver() -> void:
+		has_screwdriver = true
+		if is_instance_valid(hand_screwdriver):
+				hand_screwdriver.visible = true
+		show_message("Screwdriver Acquired!")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dol8i4hh0xicy"]
 
-[ext_resource type="Script" uid="uid://dwperwscyql0l" path="res://keycard.gd" id="1_hj5ur"]
+[ext_resource type="Script" uid="uid://dwperwscyql0l" path="res://Script/keycard.gd" id="1_hj5ur"]
 [ext_resource type="PackedScene" uid="uid://dkm562yxnfuhs" path="res://bunker_assets/scpcb_keycard_l4 (1).glb" id="1_mrm1b"]
 [ext_resource type="AudioStream" uid="uid://c50o8e5h5xww7" path="res://bunker_assets/freesound_community-blink-93025.mp3" id="3_c7mrs"]
 

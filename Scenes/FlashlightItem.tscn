@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6f5m4c2x1xa2"]
 
-[ext_resource type="Script" uid="uid://dny5wsmqd1i1q" path="res://FlashlightItem.gd" id="1_crhfl"]
+[ext_resource type="Script" uid="uid://dny5wsmqd1i1q" path="res://Script/FlashlightItem.gd" id="1_crhfl"]
 [ext_resource type="PackedScene" uid="uid://b8gceubhf6gs0" path="res://bunker_assets/vintage_flashlight.glb" id="2_87wxw"]
 [ext_resource type="AudioStream" uid="uid://c50o8e5h5xww7" path="res://bunker_assets/freesound_community-blink-93025.mp3" id="3_87wxw"]
 

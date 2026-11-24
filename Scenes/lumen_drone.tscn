@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5rek8m7ntvws"]
 
-[ext_resource type="Script" uid="uid://3ug84kyshgrf" path="res://lumen_drone.gd" id="1_opow3"]
+[ext_resource type="Script" uid="uid://3ug84kyshgrf" path="res://Script/lumen_drone.gd" id="1_opow3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k5j8d"]
 radius = 0.6

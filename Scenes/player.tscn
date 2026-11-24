@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dk7poh0xnq8ji"]
 
-[ext_resource type="Script" uid="uid://depii8jg15scy" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://depii8jg15scy" path="res://Script/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://b8gceubhf6gs0" path="res://bunker_assets/vintage_flashlight.glb" id="2_i3pqv"]
-[ext_resource type="PackedScene" uid="uid://clf3ga0mtjae6" path="res://PauseMenu.tscn" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://clf3ga0mtjae6" path="res://Scenes/PauseMenu.tscn" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://c016qn086klc" path="res://bunker_assets/screwdriver__.rawscan. (1).glb" id="3_x3wgy"]
 [ext_resource type="AudioStream" uid="uid://sqa22f4ajeuh" path="res://bunker_assets/lexin_music-space-ambient-sci-fi-121842.mp3" id="4_sweqy"]
 [ext_resource type="AudioStream" uid="uid://bsriyp4q1ss7h" path="res://bunker_assets/wolfy_sanic-jump-15984.mp3" id="5_2hs0m"]
 
@@ -60,6 +61,13 @@ transform = Transform3D(-0.00055841997, 0, 0.9999998, 0, 1, 0, -0.9999998, 0, -0
 light_color = Color(1, 1, 0.78431374, 1)
 light_energy = 5.0
 spot_range = 20.0
+
+[node name="HandScrewdriver" type="Node3D" parent="Head/Camera3D" unique_id=1264665771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.3, -0.6)
+visible = false
+
+[node name="Sketchfab_Scene" parent="Head/Camera3D/HandScrewdriver" unique_id=2045732498 instance=ExtResource("3_x3wgy")]
+transform = Transform3D(-0.0385622, 0, -0.9992563, -0.20417324, 0.97890306, 0.007879229, 0.97817504, 0.20432524, -0.037748657, -0.14872774, -0.18516326, -0.043753624)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=86720577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

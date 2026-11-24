@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dw81s5kt6wkmy"]
 
-[ext_resource type="Script" uid="uid://elvahvbr43xj" path="res://gate.gd" id="1_15vrf"]
+[ext_resource type="Script" uid="uid://elvahvbr43xj" path="res://Script/gate.gd" id="1_15vrf"]
 [ext_resource type="Texture2D" uid="uid://bwypuye30bfsb" path="res://bunker_assets/computer (1)_1.png" id="2_ikl61"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lukw"]
