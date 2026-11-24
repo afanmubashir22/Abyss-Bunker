@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://dw81s5kt6wkmy" path="res://Scenes/gate.tscn" id="14_gn8l5"]
 [ext_resource type="PackedScene" uid="uid://fbobe7o52yuj" path="res://bunker_assets/computer (1).glb" id="16_1fphk"]
 [ext_resource type="PackedScene" uid="uid://bevudeqswa7su" path="res://bunker_assets/locker_scifi_type_va (1).glb" id="17_sjtuv"]
+[ext_resource type="PackedScene" uid="uid://2a3m6of6qnco" path="res://Scenes/vent_gate.tscn" id="18_mvfa8"]
+[ext_resource type="PackedScene" uid="uid://r2fuy78min11" path="res://Scenes/screwdriver.tscn" id="19_r0dna"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w02q"]
 albedo_texture = ExtResource("1_eu7l1")
@@ -659,3 +661,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.94094, 12.339598, 39.4591
 
 [node name="Gate" parent="." unique_id=741916715 instance=ExtResource("14_gn8l5")]
 transform = Transform3D(-0.031201467, 0, -0.9995131, 0, 1, 0, 0.9995131, 0, -0.031201467, -35.75409, 13.604959, -2.0377731)
+
+[node name="VentGate" parent="." unique_id=1831039834 instance=ExtResource("18_mvfa8")]
+transform = Transform3D(-0.0335738, 0, -0.99943626, 0, 1, 0, 0.99943626, 0, -0.0335738, 34.865692, 11.732123, 19.053503)
+
+[node name="Screwdriver" parent="." unique_id=1467322093 instance=ExtResource("19_r0dna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.69845, 11.682151, 11.788188)

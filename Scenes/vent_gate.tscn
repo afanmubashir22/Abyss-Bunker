@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://2a3m6of6qnco"]
+
+[ext_resource type="PackedScene" uid="uid://b0xuhsjvgbh2d" path="res://bunker_assets/vent.glb" id="1_ki4c8"]
+[ext_resource type="Script" uid="uid://brf5q2lgcfaar" path="res://Script/vent_gate.gd" id="1_t0pmx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1o44d"]
+size = Vector3(99.18708, 100.02025, 5.2326984)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3y6c"]
+size = Vector3(3.4160767, 4.88414, 6.227577)
+
+[node name="VentGate" type="Node3D" unique_id=1831039834]
+script = ExtResource("1_t0pmx")
+
+[node name="VentModel" parent="." unique_id=403937908 instance=ExtResource("1_ki4c8")]
+transform = Transform3D(0.039425675, 0, 0, 0, 0.03292641, 0, 0, 0, 0.03292641, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="VentModel" unique_id=224772314]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VentModel/StaticBody3D" unique_id=731684800]
+transform = Transform3D(0.9999949, 0, 0, 0, 1, 0, 0, 0, 1, -0.3034378, 0.33971816, 0.54479533)
+shape = SubResource("BoxShape3D_1o44d")
+
+[node name="InteractZone" type="Area3D" parent="." unique_id=986332265]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractZone" unique_id=336943177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5798092, 1.4316635, 0.7041817)
+shape = SubResource("BoxShape3D_v3y6c")
