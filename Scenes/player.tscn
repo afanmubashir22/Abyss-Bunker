@@ -67,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.3, -0.6)
 visible = false
 
 [node name="Sketchfab_Scene" parent="Head/Camera3D/HandScrewdriver" unique_id=2045732498 instance=ExtResource("3_x3wgy")]
-transform = Transform3D(-0.0385622, 0, -0.9992563, -0.20417324, 0.97890306, 0.007879229, 0.97817504, 0.20432524, -0.037748657, -0.14872774, -0.18516326, -0.043753624)
+transform = Transform3D(-0.038562194, 1.6728454e-09, -0.99925625, -0.004098445, 0.99999154, 0.00015816418, 0.9992478, 0.0041015446, -0.038561873, -0.14872774, -0.26305246, -0.043753624)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=86720577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
