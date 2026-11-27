@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bpg66eai08plp"]
+
+[ext_resource type="PackedScene" uid="uid://8g6n5bly7s6f" path="res://bunker_assets/crowbar.glb" id="1_mjjio"]
+[ext_resource type="Script" uid="uid://ehh5syu8efbv" path="res://Script/crowbar.gd" id="1_qfehb"]
+[ext_resource type="AudioStream" uid="uid://c50o8e5h5xww7" path="res://bunker_assets/freesound_community-blink-93025.mp3" id="3_nylwy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qfehb"]
+size = Vector3(1.111206, 2.1760025, 1.1469727)
+
+[node name="Crowbar" type="Area3D" unique_id=178378228]
+script = ExtResource("1_qfehb")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1895924699 instance=ExtResource("1_mjjio")]
+transform = Transform3D(1.5854061, 0, 0, 0, 1.5854061, 0, 0, 0, 1.5854061, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=760568785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055603027, 1.0887969, -0.07348633)
+shape = SubResource("BoxShape3D_qfehb")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="." unique_id=1097150970]
+stream = ExtResource("3_nylwy")

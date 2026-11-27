@@ -212,7 +212,7 @@ func equip_screwdriver() -> void:
 								hand_crowbar.visible = false
 func equip_crowbar() -> void:
 				holding_crowbar = true
-				hand_crowbar.visible = true
+				holding_screwdriver = false
 				if is_instance_valid(hand_crowbar):
 								hand_crowbar.visible = true
 				if is_instance_valid(hand_screwdriver):
