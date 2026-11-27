@@ -14,6 +14,7 @@ extends CharacterBody3D
 @onready var bgm_player: AudioStreamPlayer = $BGMPlayer
 @onready var hand_flashlight: Node3D = $Head/Camera3D/HandFlashlight
 @onready var hand_screwdriver: Node3D = $Head/Camera3D/HandScrewdriver
+@onready var hand_crowbar = $Head/Camera3D/HandCrowbar
 @onready var jump_sound: AudioStreamPlayer = $JumpSoundPlayer
 @onready var objectives: Array[String] = [
 				"OBJECTIVE 1:\nLocate the screwdriver",
@@ -32,6 +33,9 @@ var crystals_collected: int = 0
 var is_hidden: bool = false
 var has_flashlight: bool = false
 var has_screwdriver: bool = false
+var holding_screwdriver: bool = false
+var has_crowbar: bool = false
+var holding_crowbar: bool = false
 var has_keycard: bool = false
 var  is_crouching: bool = false
 var stand_head_y: float = 0.0
@@ -51,6 +55,10 @@ func _ready() -> void:
 				hand_screwdriver.visible = false
 		stand_head_y = head.position.y
 		stand_col_y = collision_shape.position.y
+		if is_instance_valid(hand_screwdriver):
+						hand_screwdriver.visible = false
+		if is_instance_valid(hand_crowbar):
+						hand_crowbar.visible = false
 		if collision_shape.shape is CapsuleShape3D:
 				stand_height = collision_shape.shape.height
 		update_objective()
@@ -72,6 +80,10 @@ func _unhandled_input(event: InputEvent) -> void:
 						var victory_ui = get_node_or_null("%VictoryScreen")
 						if is_instance_valid(victory_ui) and victory_ui.visible:
 								get_tree().reload_current_scene()
+				elif event.keycode == KEY_1:
+						toggle_screwdriver()
+				elif event.keycode == KEY_2:
+						toggle_crowbar()
 func _physics_process(delta: float) -> void:
 		is_crouching = Input.is_key_pressed(KEY_CTRL) or Input.is_key_pressed(KEY_C)
 		
@@ -170,7 +182,45 @@ func advance_objective(next_index: int) -> void:
 				update_objective()
 func pickup_screwdriver() -> void:
 		has_screwdriver = true
-		if is_instance_valid(hand_screwdriver):
-				hand_screwdriver.visible = true
+		equip_screwdriver()
 		show_message("Screwdriver Acquired!")
 		advance_objective(1)
+func pickup_crowbar() -> void:
+		has_crowbar = true
+		equip_crowbar()
+		show_message("Crowbar Acquired!")
+func toggle_screwdriver() -> void:
+				if not has_screwdriver:
+								return
+				if holding_screwdriver:
+								unequip_tools()
+				else:
+								equip_screwdriver()
+func toggle_crowbar() -> void:
+				if not has_crowbar:
+								return
+				if holding_crowbar:
+								unequip_tools()
+				else:
+								equip_crowbar()
+func equip_screwdriver() -> void:
+				holding_screwdriver = true
+				holding_crowbar = false
+				if is_instance_valid(hand_screwdriver):
+								hand_screwdriver.visible = true
+				if is_instance_valid(hand_crowbar):
+								hand_crowbar.visible = false
+func equip_crowbar() -> void:
+				holding_crowbar = true
+				hand_crowbar.visible = true
+				if is_instance_valid(hand_crowbar):
+								hand_crowbar.visible = true
+				if is_instance_valid(hand_screwdriver):
+								hand_screwdriver.visible = false
+func unequip_tools() -> void:
+				holding_screwdriver = false
+				holding_crowbar = false
+				if is_instance_valid(hand_screwdriver):
+								hand_screwdriver.visible = false
+				if is_instance_valid(hand_crowbar):
+								hand_crowbar.visible = false
