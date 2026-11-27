@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c7gv06krcs3yf"]
+
+[ext_resource type="Script" uid="uid://cy74y1odp6y6" path="res://Script/key.gd" id="1_udxw8"]
+[ext_resource type="PackedScene" uid="uid://b5s23sj8cmdjo" path="res://bunker_assets/key_card_lvl_1.glb" id="2_brn0f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lc1k7"]
+size = Vector3(3.2751465, 7.015747, 6.6726074)
+
+[node name="Key" type="Area3D" unique_id=1530791906]
+script = ExtResource("1_udxw8")
+spin_speed = null
+
+[node name="Sketchfab_Scene" parent="." unique_id=459413674 instance=ExtResource("2_brn0f")]
+transform = Transform3D(0.3504591, 0, 0, 0, 0.3504591, 0, 0, 0, 0.3504591, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1432229376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021118164, 2.3789673, 1.8812256)
+shape = SubResource("BoxShape3D_lc1k7")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="." unique_id=1339766346]

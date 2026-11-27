@@ -32,6 +32,7 @@ var message_tween: Tween
 var crystals_collected: int = 0
 var is_hidden: bool = false
 var has_flashlight: bool = false
+var has_key: bool = false
 var has_screwdriver: bool = false
 var holding_screwdriver: bool = false
 var has_crowbar: bool = false
@@ -163,6 +164,9 @@ func pickup_keycard() -> void:
 		print("Keycard acquired!")
 		show_message("Keycard Acquired!")
 		advance_objective(2)
+func pickup_key() -> void:
+		has_key = true
+		show_message("Key Acquired!")
 func show_message(text: String, duration: float = 2.5) -> void:
 		if not is_instance_valid(message_label):
 				return

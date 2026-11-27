@@ -439,9 +439,9 @@ size = Vector3(4.3187943, 3.531311, 38.845856)
 material = SubResource("StandardMaterial3D_0vv3x")
 
 [node name="CSGBox3D53" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=2127417233]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.350204, 13.589968, 39.059296)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.45928, 13.589968, 39.467583)
 operation = 2
-size = Vector3(10.103733, 6.9364624, 6.6959534)
+size = Vector3(18.321886, 6.9364624, 7.5125275)
 material = SubResource("StandardMaterial3D_0vv3x")
 
 [node name="CSGBox3D32" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=132509907]
@@ -508,9 +508,9 @@ size = Vector3(4.7545166, 7.001045, 4.8496246)
 material = SubResource("StandardMaterial3D_0bcf6")
 
 [node name="CSGBox3D60" type="CSGBox3D" parent="BunkerMap/CSGCombiner3D" unique_id=1079426565]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9366674, -3.4463434, -35.88656)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9366674, -3.4463434, -36.15165)
 operation = 2
-size = Vector3(26.177994, 15.736336, 243.39728)
+size = Vector3(26.177994, 15.736336, 242.8671)
 material = SubResource("StandardMaterial3D_y1bqn")
 
 [node name="Player" parent="." unique_id=2134804852 instance=ExtResource("1_c6gwx")]
@@ -576,7 +576,7 @@ transform = Transform3D(14.620851, 0, 0, 0, 11.795213, 0, 0, 0, 16.043072, -2.68
 transform = Transform3D(14.620851, 0, 0, 0, 11.795213, 0, 0, 0, 16.043072, -2.680275, 6.7094116, 2.8591027)
 
 [node name="Sketchfab_Scene38" parent="models" unique_id=124678458 instance=ExtResource("3_bcbcq")]
-transform = Transform3D(11.52924, 0, 0, 0, 7.5472503, 0, 0, 0, 10.558955, -8.127109, 8.485281, 61.66378)
+transform = Transform3D(11.52924, 0, 0, 0, 7.5472503, 0, 0, 0, 10.558955, -8.127109, 8.485281, 60.920753)
 
 [node name="Sketchfab_Scene39" parent="models" unique_id=1250474161 instance=ExtResource("3_bcbcq")]
 transform = Transform3D(2.35839, 0, 0, 0, 7.5472503, 0, 0, 0, 6.0893507, 13.934252, 8.485281, 35.94905)
@@ -630,13 +630,13 @@ transform = Transform3D(10.435601, 0, 0, 0, 10.435601, 0, 0, 0, 10.435601, -2.48
 transform = Transform3D(4.019947, 0, 0, 0, 4.019947, 0, 0, 0, 4.019947, -15.618798, 11.1673765, 24.999907)
 
 [node name="Sketchfab_Scene64" parent="models" unique_id=727687412 instance=ExtResource("17_sjtuv")]
-transform = Transform3D(4.019947, 0, 0, 0, 4.019947, 0, 0, 0, 9.047145, 16.065666, 10.256292, 83.96572)
+transform = Transform3D(4.019947, 0, 0, 0, 4.019947, 0, 0, 0, 9.047145, 16.065666, 10.256292, 83.60531)
 
 [node name="Sketchfab_Scene70" parent="models" unique_id=2101731795 instance=ExtResource("17_sjtuv")]
-transform = Transform3D(4.019947, 0, 0, 0, 4.019947, 0, 0, 0, 9.047145, 13.675383, 10.256292, 83.96572)
+transform = Transform3D(4.019947, 0, 0, 0, 4.019947, 0, 0, 0, 9.047145, 13.675383, 10.256292, 83.70947)
 
 [node name="Sketchfab_Scene71" parent="models" unique_id=1558484673 instance=ExtResource("17_sjtuv")]
-transform = Transform3D(4.019947, 0, 0, 0, 4.019947, 0, 0, 0, 9.047145, 11.312901, 10.256292, 83.96572)
+transform = Transform3D(4.019947, 0, 0, 0, 4.019947, 0, 0, 0, 9.047145, 11.312901, 10.256292, 83.62186)
 
 [node name="Sketchfab_Scene72" parent="models" unique_id=341618478 instance=ExtResource("17_sjtuv")]
 transform = Transform3D(4.019947, 0, 0, 0, 4.019947, 0, 0, 0, 9.047145, 0.28324604, 10.256292, 83.96572)
@@ -699,10 +699,10 @@ transform = Transform3D(0.35148394, 0, 0, 0, 0.35148394, 0, 0, 0, 0.35148394, -7
 transform = Transform3D(0.35148394, 0, 0, 0, 0.35148394, 0, 0, 0, 0.35148394, -6.5806193, 10.704287, 76.46417)
 
 [node name="Sketchfab_Scene49" parent="models" unique_id=311462242 instance=ExtResource("14_d3ars")]
-transform = Transform3D(0.35148394, 0, 0, 0, 0.35148394, 0, 0, 0, 0.35148394, 5.720738, 10.704287, 68.89807)
+transform = Transform3D(0.35072815, 0, 0.023037119, 0, 0.35148394, 0, -0.023037119, 0, 0.35072815, 0.94245815, 10.704287, 72.704056)
 
 [node name="Sketchfab_Scene50" parent="models" unique_id=1044511106 instance=ExtResource("14_d3ars")]
-transform = Transform3D(0.35148394, 0, 0, 0, 0.35148394, 0, 0, 0, 0.35148394, -0.38417768, 10.704287, 61.9337)
+transform = Transform3D(0.35148394, 0, 0, 0, 0.35148394, 0, 0, 0, 0.35148394, -0.9866948, 10.704287, 62.970757)
 
 [node name="Sketchfab_Scene51" parent="models" unique_id=900458496 instance=ExtResource("14_d3ars")]
 transform = Transform3D(0.35148394, 0, 0, 0, 0.35148394, 0, 0, 0, 0.35148394, -0.38417768, 10.704287, 53.45302)
@@ -832,7 +832,7 @@ light_energy = 100.0
 omni_range = 8.957848
 
 [node name="Keycard" parent="." unique_id=245910331 instance=ExtResource("13_ee7l0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.94094, 12.339598, 39.459114)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.23021, 11.715451, 39.106884)
 
 [node name="Gate" parent="." unique_id=741916715 instance=ExtResource("14_gn8l5")]
 transform = Transform3D(-0.031201467, 0, -0.9995131, 0, 1, 0, 0.9995131, 0, -0.031201467, -35.75409, 13.604959, -2.0377731)
@@ -853,7 +853,7 @@ transform = Transform3D(0.731921, -0.055856355, 0.6790963, 0.04094636, 0.9984388
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9315214, 15.540392, 46.267612)
 
 [node name="VentGate5" parent="." unique_id=240485652 instance=ExtResource("27_g01fq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.822515, 10.551871, 82.13874)
+transform = Transform3D(0.9997673, 0, -0.021570597, 0, 1, 0, 0.021570597, 0, 0.9997673, -14.822515, 10.551871, 81.78666)
 
 [node name="Crowbar" parent="." unique_id=178378228 instance=ExtResource("28_0bcf6")]
 transform = Transform3D(1.429593, 0, 0, 0, 1.4096645, -0.23787017, 0, 0.23787017, 1.4096645, -36.20751, 10.596473, 50.02899)
@@ -861,7 +861,7 @@ transform = Transform3D(1.429593, 0, 0, 0, 1.4096645, -0.23787017, 0, 0.23787017
 [node name="Lasers" type="Node3D" parent="." unique_id=934926310]
 
 [node name="Laser" parent="Lasers" unique_id=816017563 instance=ExtResource("30_y1bqn")]
-transform = Transform3D(-0.013107035, 0, 0.9999141, 0, 1, 0, -0.9999141, 0, -0.013107035, -7.0109677, -9.63903, 42.339935)
+transform = Transform3D(-0.013107035, 0, 0.9999141, 0, 1, 0, -0.9999141, 0, -0.013107035, -7.0109677, -9.960005, 42.339935)
 
 [node name="Laser2" parent="Lasers" unique_id=1379034704 instance=ExtResource("30_y1bqn")]
 transform = Transform3D(-0.013107035, 0, 0.9999141, 0, 1, 0, -0.9999141, 0, -0.013107035, -7.0109677, -9.885811, 2.8165512)
@@ -914,26 +914,29 @@ transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.0
 [node name="Laser25" parent="Lasers" unique_id=1741240130 instance=ExtResource("30_y1bqn")]
 transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, 2.7835617, -6.106119, -107.42174)
 
+[node name="Laser33" parent="Lasers" unique_id=1517169626 instance=ExtResource("30_y1bqn")]
+transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, 5.4137545, -6.106119, -107.42174)
+
 [node name="Laser26" parent="Lasers" unique_id=1941637475 instance=ExtResource("30_y1bqn")]
 transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, 0.12985516, -6.106119, -107.42174)
 
 [node name="Laser27" parent="Lasers" unique_id=731285749 instance=ExtResource("30_y1bqn")]
-transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, -3.5745974, -6.106119, -107.42174)
+transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, -3.0912275, -6.106119, -107.42174)
 
 [node name="Laser28" parent="Lasers" unique_id=448520945 instance=ExtResource("30_y1bqn")]
 transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, -7.403911, -6.106119, -107.42174)
 
+[node name="Laser32" parent="Lasers" unique_id=2119529301 instance=ExtResource("30_y1bqn")]
+transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, -5.1067824, -6.106119, -107.42174)
+
 [node name="Laser29" parent="Lasers" unique_id=1844773492 instance=ExtResource("30_y1bqn")]
-transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, -10.623123, -6.106119, -107.42174)
+transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, -9.669344, -6.106119, -107.42174)
 
 [node name="Laser30" parent="Lasers" unique_id=544888010 instance=ExtResource("30_y1bqn")]
 transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, -11.851934, -6.106119, -107.42174)
 
 [node name="Laser31" parent="Lasers" unique_id=1213455172 instance=ExtResource("30_y1bqn")]
 transform = Transform3D(-0.00024681768, 0.9998227, 0.018829314, 0.013104711, 0.01883093, -0.9997368, -0.9999141, 0, -0.013107035, -13.7215805, -6.106119, -107.42174)
-
-[node name="Laser32" parent="Lasers" unique_id=243152073 instance=ExtResource("30_y1bqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
 [node name="Laser3" parent="Lasers" unique_id=1713418365 instance=ExtResource("30_y1bqn")]
 transform = Transform3D(-0.013107035, 0, 0.9999141, 0, 1, 0, -0.9999141, 0, -0.013107035, -7.0109677, -9.885811, -16.997368)
