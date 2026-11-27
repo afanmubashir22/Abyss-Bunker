@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b0xn14ue8th6t"]
+
+[ext_resource type="Script" uid="uid://g1hp1tkfk41l" path="res://Script/laser.gd" id="1_mou6w"]
+[ext_resource type="PackedScene" uid="uid://i0mg2cton6lt" path="res://bunker_assets/laser_beam.glb" id="1_r1bh0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mou6w"]
+size = Vector3(0.48754883, 0.27363586, 29.753899)
+
+[node name="Laser" type="Area3D" unique_id=816017563]
+script = ExtResource("1_mou6w")
+
+[node name="Sketchfab_Scene" parent="." unique_id=346872278 instance=ExtResource("1_r1bh0")]
+transform = Transform3D(0.47403878, 0, 0, 0, 0.25075996, 0, 0, 0, 0.53589374, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1589620771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10168457, -0.0973587, 0.18428421)
+shape = SubResource("BoxShape3D_mou6w")
